@@ -6,20 +6,12 @@ package com.zemosotraining.designprinciples.SOLIDprinciples.SRP.solution;
 
 public class MobileDialler extends Mobile {
 
-    public MobileDialler(long mobileNumber, long IMEI1, long IMEI2,
-                         String deviceName) {
-        super(mobileNumber, IMEI1, IMEI2, deviceName);
+    public MobileDialler(long IMEI1, long IMEI2, long primaryMobileNumber, long secondaryMobileNumber, String deviceName) {
+        super(IMEI1, IMEI2, primaryMobileNumber, secondaryMobileNumber, deviceName);
     }
 
-    void dial(long mobileNumber) {
+    void dial(long mobileNumber1, long mobileNumber2) {
         // logic for dialing a mobile number
-        System.out.println("Attempting to dial the Mobile " + mobileNumber);
+        System.out.println("From " + mobileNumber1 + ", Attempting to dial the Mobile " + mobileNumber2);
     }
-
-    public static void main(String[] args) {
-        MobileDialler dialler = new MobileDialler(9876563623L,
-                725916963963239L, 725916963963240L, "Mi A3");
-        dialler.dial(dialler.getMobileNumber());
-    }
-
 }

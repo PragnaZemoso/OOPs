@@ -6,11 +6,10 @@ package com.zemosotraining.designprinciples.SOLIDprinciples.SRP.solution;
 
 public class MobileMessenger extends Mobile {
 
-    public String message;
+    private String message;
 
-    public MobileMessenger(long mobileNumber, long IMEI1, long IMEI2,
-                           String deviceName, String message) {
-        super(mobileNumber, IMEI1, IMEI2, deviceName);
+    public MobileMessenger(long IMEI1, long IMEI2, long primaryMobileNumber, long secondaryMobileNumber, String deviceName, String message) {
+        super(IMEI1, IMEI2, primaryMobileNumber, secondaryMobileNumber, deviceName);
         this.message = message;
     }
 
@@ -22,19 +21,9 @@ public class MobileMessenger extends Mobile {
         this.message = message;
     }
 
-    void sendMessage(long mobileNum, String msg) {
+    void sendMessage(long mobileNumber1, long mobileNumber2, String message) {
         // logic for sending message
-        System.out.println("Sending message '" + msg + "' to mobile "
-                + mobileNum);
-    }
-
-    public static void main(String[] args) {
-
-        MobileMessenger messengerObj = new MobileMessenger(9876563623L,
-                725916963963239L, 725916963963240L, "Mi A3",
-                "Hi, I am Pragna incoming ZeMoSo ASE");
-        messengerObj.sendMessage(messengerObj.getMobileNumber(),
-                messengerObj.getMessage());
+        System.out.println("Sending message '" + message + "' from " + mobileNumber1 + " to mobile " + mobileNumber2);
     }
 
 }

@@ -8,11 +8,12 @@ import com.zemosotraining.designprinciples.SOLIDprinciples.SRP.solution.Mobile;
 
 public class MobileWithTripleSimSlots extends Mobile {
     private long IMEI3; // IMEI Number for SIM slot 3
+    private long ternaryNumber;
 
-    public MobileWithTripleSimSlots(long mobileNumber, long IMEI1, long IMEI2,
-                                    String deviceName, long IMEI3) {
-        super(mobileNumber, IMEI1, IMEI2, deviceName);
+    public MobileWithTripleSimSlots(long IMEI1, long IMEI2, long primaryMobileNumber, long secondaryMobileNumber, String deviceName, long IMEI3, long ternaryMobileNumber) {
+        super(IMEI1, IMEI2, primaryMobileNumber, secondaryMobileNumber, deviceName);
         this.IMEI3 = IMEI3;
+        this.ternaryNumber = ternaryMobileNumber;
     }
 
     public long getIMEI3() {
@@ -23,11 +24,12 @@ public class MobileWithTripleSimSlots extends Mobile {
         IMEI3 = iMEI3;
     }
 
-    public static void main(String[] args) {
-        MobileWithTripleSimSlots tripleSimMobile = new MobileWithTripleSimSlots(9876563626L,
-                725916963963239L, 725916963963240L, "Mi A3", 325916963963241L);
-        System.out.println("IMEI Number of 3rd SIM slot: " + tripleSimMobile.getIMEI3());
+    public long getTernaryNumber() {
+        return ternaryNumber;
+    }
 
+    public void setTernaryNumber(long ternaryNumber) {
+        this.ternaryNumber = ternaryNumber;
     }
 
 }
