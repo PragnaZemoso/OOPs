@@ -1,6 +1,6 @@
 package com.zemosotraining.oops;
 
-//Composition: Contained obj Book CANNOT survive without the container obj Library
+//Composition: the container obj Library CANNOT survive without Contained obj Book
 import java.util.ArrayList;
 import java.util.List;
 
